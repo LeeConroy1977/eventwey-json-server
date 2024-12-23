@@ -1,10 +1,12 @@
 {
-  "name": "eventwey-json-server",
+  "name": "json-server-deploy",
   "version": "1.0.0",
-  "dependencies": {
-    "json-server": "^1.0.0-beta.3"
-  },
+  "description": "Simple JSON server for testing",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "json-server --watch db.json --port 3000"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0"
   }
 }
