@@ -1,13 +1,21 @@
 const jsonServer = require("json-server");
-
 const server = jsonServer.create();
-const router = jsonServer.router("db.json"); // Make sure db.json is in the same directory
+const router = jsonServer.router("./db.json");
 const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
-server.use("/api", router);
+server.use(router);
 
-const port = process.env.PORT || 3000;
-server.listen(port, () => {
-  console.log(`JSON Server is running on port ${port}`);
-});
+module.exports.handler = async (event, context) => {
+  const response = await new Promise((resolve, reject) => {
+    server.listen(3000, () => {
+      console.log("JSON Server is running");
+      resolve({
+        statusCode: 200,
+        body: JSON.stringify({ message: "JSON Server deployed on Netlify!" }),
+      });
+    });
+  });
+
+  return response;
+};
