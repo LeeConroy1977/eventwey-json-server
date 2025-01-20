@@ -1,9 +1,9 @@
 [build]
   command = "npm run build"
-  functions = "functions"
-  publish = "public"
+  publish = "public"          # Static site directory
+  functions = "functions-build" # Compiled functions directory
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server"
+  to = "/.netlify/functions/:splat"
   status = 200
