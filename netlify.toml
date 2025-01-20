@@ -1,6 +1,7 @@
 [build]
-  command = "" # No build command needed for JSON server
-  functions = "functions-build" # Directory where Netlify Functions are built
+  [build]
+  command = "npm run build" # Ensure your function is built
+  functions = "functions-build" 
 
 [[redirects]]
   from = "/api/*"
