@@ -1,6 +1,5 @@
 [build]
-  command = ""  # No build command is needed for a JSON server
-  publish = ""  # Leave this empty because you are not serving static files
+  command = "" # No build command needed for JSON server
   functions = "functions-build" # Directory where Netlify Functions are built
 
 [[redirects]]
