@@ -1,9 +1,9 @@
 [build]
-  command = "npm run build"
-  publish = "public"          # Static site directory
-  functions = "functions-build" # Compiled functions directory
+  command = ""  # No build command is needed for a JSON server
+  publish = ""  # Leave this empty because you are not serving static files
+  functions = "functions-build" # Directory where Netlify Functions are built
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  to = "/.netlify/functions/server"
   status = 200
